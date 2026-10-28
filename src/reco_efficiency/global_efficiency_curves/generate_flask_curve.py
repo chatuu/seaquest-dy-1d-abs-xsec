@@ -71,9 +71,9 @@ if __name__ == "__main__":
     # Define input and output paths
     base_dir = "./"
     
-    file_lh2 = os.path.join(base_dir, "rs67_lh2_eff_D1.npz")
-    file_ld2 = os.path.join(base_dir, "rs67_ld2_eff_D1.npz")
-    output_file = os.path.join(base_dir, "rs67_avg_eff_D1.npz")
+    file_lh2 = os.path.join(base_dir, "rs70_lh2_eff_D1.npz")
+    file_ld2 = os.path.join(base_dir, "rs70_ld2_eff_D1.npz")
+    output_file = os.path.join(base_dir, "rs70_avg_eff_D1.npz")
     
     # Check if files exist before running
     if not os.path.exists(file_lh2):

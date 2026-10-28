@@ -18,11 +18,11 @@ for RS in "${ROADSETS[@]}"; do
         
         # Map target to its specific .npz configuration file
         if [ "$TARGET" == "Empty" ]; then
-            CONFIG_FILE="${NPZ_DIR}/rs59_avg_eff_D1.npz"
+            CONFIG_FILE="${NPZ_DIR}/rs57_avg_eff_D1.npz"
         elif [ "$TARGET" == "LD2" ]; then
-            CONFIG_FILE="${NPZ_DIR}/rs59_ld2_eff_D1.npz"
+            CONFIG_FILE="${NPZ_DIR}/rs57_ld2_eff_D1.npz"
         elif [ "$TARGET" == "LH2" ]; then
-            CONFIG_FILE="${NPZ_DIR}/rs59_lh2_eff_D1.npz"
+            CONFIG_FILE="${NPZ_DIR}/rs57_lh2_eff_D1.npz"
         else
             echo "Unknown target $TARGET. Skipping..."
             continue

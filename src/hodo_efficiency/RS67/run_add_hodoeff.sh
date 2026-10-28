@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Define the targets to loop through
-TARGETS=("LH2" "LD2" "Flask")
+TARGETS=("LH2" "LD2" "Empty")
 
 echo "Starting Hodoscope Efficiency calculation for all targets..."
 
 for TARGET in "${TARGETS[@]}"; do
     # Construct the file paths
-    INPUT_FILE="/home/ckuruppu/github/seaquest-dy-1d-abs-xsec/src/reco_efficiency/RS67/merged_RS67_${TARGET}_recoeff_unfolding_new.root"
-    OUTPUT_FILE="merged_RS67_3089_${TARGET}_recoeff_hodoeff_unfolding_new.root"
-    
+    INPUT_FILE="~/github/seaquest-dy-1d-abs-xsec/src/reco_efficiency/RS67/merged_RS67_${TARGET}_recoeff_unfolding_new.root"
+    OUTPUT_FILE="~/github/seaquest-dy-1d-abs-xsec/src/reco_efficiency/RS67/merged_RS67_3089_${TARGET}_recoeff_hodoeff_unfolding_new.root"
+
     echo "--------------------------------------------------"
     echo "Target: $TARGET"
     echo "Input:  $INPUT_FILE"

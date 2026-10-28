@@ -1,0 +1,9 @@
+recoeff,recoeff_error,hodoeff,hodoeff_error
+
+average recoeff,0.0
+propagated recoeff_error (without correlations),0.0
+propagated recoeff_error (with correlations),0.0
+average hodoeff,0.0
+propagated hodoeff_error,0.0
+total_eff = average recoeff (with correlations) * average hodoeff,0.0
+total_eff_error = propagated error of total_eff,0.0

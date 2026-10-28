@@ -139,7 +139,7 @@ class DYCrossSectionAnalyzer:
                     
                     # Call dynamically loaded apply_cuts, with fallback if tree is already pre-cut
                     try:
-                        raw_filtered = self.chuck_cuts.apply_cuts(tree, False, lower_mass_cut=4.2, upper_mass_cut=8.8, upper_pT2_cut=5.0)
+                        raw_filtered = self.chuck_cuts.apply_cuts_with_fiducial(tree, False, lower_mass_cut=4.2, upper_mass_cut=8.8, upper_pT2_cut=5.0)
                     except Exception as cut_err:
                         print(f"Info: apply_cuts on '{tree_name}' raised ({cut_err}); reading pre-cut branches directly.")
                         raw_filtered = tree.arrays(library="np")

@@ -1,0 +1,10 @@
+recoeff,recoeff_error,hodoeff,hodoeff_error
+0.37147727068422387,0.026258571143636212,0.9000276088202483,0.048606221959624704
+
+average recoeff,0.37147727068422387
+propagated recoeff_error (without correlations),0.026258571143636212
+propagated recoeff_error (with correlations),0.026258571143636212
+average hodoeff,0.9000276088202483
+propagated hodoeff_error,0.048606221959624704
+total_eff = average recoeff (with correlations) * average hodoeff,0.33433979966499416
+total_eff_error = propagated error of total_eff,0.02974159422409101

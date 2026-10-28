@@ -1,0 +1,729 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+
+\providecommand{\diffd}{\mathrm{d}}
+
+\title[RS62 XSec Comparison]{RS62 Yield, Efficiency \& Cross-Section Comparison}
+\subtitle{Existing vs.\ Latest Results}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Single Differential Cross-Section Formalism ($\diffd\sigma / \diffd p_T$)}
+    \textbf{$\text{LH}_2$ ($pp$) Single Differential Cross Section:}
+    \begin{equation}
+        \frac{\diffd\sigma_{pp}}{\diffd p_{T}} = \frac{1}{\epsilon_{\text{acc}} \mathcal{L} \Delta p_{T}} 
+        \left[ 
+            \frac{Y^{\text{LH2}}_{\text{total}} - Y^{\text{LH2}}_{\text{mixed}}}{\langle\epsilon^{\text{LH2}}_{\text{signal}}\rangle} 
+- \frac{I_{\text{LH2}}}{I_{\text{flask}}} 
+            \left( \frac{Y^{\text{flask}}_{\text{total}} - Y^{\text{flask}}_{\text{mixed}}}{\langle\epsilon^{\text{flask}}_{\text{signal}}\rangle} \right)
+        \right]
+        \label{eq:modified_cross_section_pt}
+    \end{equation}
+
+    \vspace{0.3em}
+    \textbf{$\text{LD}_2$ ($pd$) Single Differential Cross Section:}
+    {\small
+    \begin{eqnarray}
+        \frac{\diffd\sigma_{pd}}{\diffd p_{T}} &=& \frac{1}{\epsilon_{\text{acc}} \mathcal{L} \Delta p_{T}} 
+        \left(
+        \left[ 
+            \frac{Y^{\text{LD2}}_{\text{total}} - Y^{\text{LD2}}_{\text{mixed}}}{\langle\epsilon^{\text{LD2}}_{\text{signal}}\rangle} 
+- \frac{I_{\text{LD2}}}{I_{\text{flask}}} 
+            \left( \frac{Y^{\text{flask}}_{\text{total}} - Y^{\text{flask}}_{\text{mixed}}}{\langle\epsilon^{\text{flask}}_{\text{signal}}\rangle} \right)
+        \right] \right. \nonumber \\
+        & & \left. - \frac{T_{HD}}{T_{HH}} \frac{I_{\rm LD2}}{I_{\rm LH2}}\left[ 
+            \frac{Y^{\text{LH2}}_{\text{total}} - Y^{\text{LH2}}_{\text{mixed}}}{\langle\epsilon^{\text{LH2}}_{\text{signal}}\rangle} 
+- \frac{I_{\text{LH2}}}{I_{\text{flask}}} 
+            \left( \frac{Y^{\text{flask}}_{\text{total}} - Y^{\text{flask}}_{\text{mixed}}}{\langle\epsilon^{\text{flask}}_{\text{signal}}\rangle} \right)
+        \right]
+        \right)
+        \label{eq:modified_cross_section_pd_pt}
+    \end{eqnarray}
+    }
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Yield Distributions}
+
+\begin{frame}{$\text{LH}_2$ Target: Total Yield (\texttt{Y\_total\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_total_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_total_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Mixed Yield (\texttt{Y\_mix\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_mix_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_mix_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Total Yield (\texttt{Y\_total\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_total_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_total_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Mixed Yield (\texttt{Y\_mix\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_mix_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_mix_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Total Yield (\texttt{Y\_total\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_total_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_total_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Mixed Yield (\texttt{Y\_mix\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_mix_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_mix_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Efficiency Distributions}
+
+\begin{frame}{$\text{LH}_2$ Target: Total Reco Efficiency (\texttt{E\_total\_reco\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_reco_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_reco_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Total Hodo Efficiency (\texttt{E\_total\_hodo\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_hodo_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_hodo_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Total Final Efficiency (\texttt{E\_total\_final\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_final_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_final_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Mixed Reco Efficiency (\texttt{E\_mix\_reco\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_reco_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_reco_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Mixed Hodo Efficiency (\texttt{E\_mix\_hodo\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_hodo_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_hodo_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Mixed Final Efficiency (\texttt{E\_mix\_final\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_final_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_final_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Total Reco Efficiency (\texttt{E\_total\_reco\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_reco_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_reco_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Total Hodo Efficiency (\texttt{E\_total\_hodo\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_hodo_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_hodo_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Total Final Efficiency (\texttt{E\_total\_final\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_final_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_final_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Mixed Reco Efficiency (\texttt{E\_mix\_reco\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_reco_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_reco_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Mixed Hodo Efficiency (\texttt{E\_mix\_hodo\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_hodo_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_hodo_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Mixed Final Efficiency (\texttt{E\_mix\_final\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_final_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_final_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Total Reco Efficiency (\texttt{E\_total\_reco\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_reco_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_reco_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Total Hodo Efficiency (\texttt{E\_total\_hodo\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_hodo_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_hodo_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Total Final Efficiency (\texttt{E\_total\_final\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_total_final_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_total_final_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Mixed Reco Efficiency (\texttt{E\_mix\_reco\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_reco_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_reco_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Mixed Hodo Efficiency (\texttt{E\_mix\_hodo\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_hodo_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_hodo_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Mixed Final Efficiency (\texttt{E\_mix\_final\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_mix_final_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_mix_final_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Final Signal Efficiency (\texttt{E\_final\_signal\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_final_signal_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_final_signal_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Final Signal Efficiency (\texttt{E\_final\_signal\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_final_signal_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_final_signal_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Final Signal Efficiency (\texttt{E\_final\_signal\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/E_final_signal_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/E_final_signal_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Corrected \& Subtracted Yields}
+
+\begin{frame}{$\text{LH}_2$ Target: Corrected Yield (\texttt{Y\_corrected\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_corrected_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_corrected_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Corrected Yield (\texttt{Y\_corrected\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_corrected_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_corrected_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Empty Flask: Corrected Yield (\texttt{Y\_corrected\_Flask.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_corrected_Flask.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_corrected_Flask.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Target: Subtracted Corrected Yield (\texttt{Y\_corrected\_Subtracted\_LH2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_corrected_Subtracted_LH2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_corrected_Subtracted_LH2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Subtracted Corrected Yield (\texttt{Y\_corrected\_Subtracted\_LD2.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Y_corrected_Subtracted_LD2.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Y_corrected_Subtracted_LD2.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Cross Sections \& Ratios}
+
+\begin{frame}{$\text{LD}_2$ Cross Section vs.\ $p_T$ (\texttt{CrossSection\_LD2\_geom\_vs\_pT.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/CrossSection_LD2_geom_vs_pT.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/CrossSection_LD2_geom_vs_pT.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$\text{LH}_2$ Cross Section vs.\ $p_T$ (\texttt{CrossSection\_LH2\_geom\_vs\_pT.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/CrossSection_LH2_geom_vs_pT.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/CrossSection_LH2_geom_vs_pT.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Cross Section Ratio $\sigma_{pd}/2\sigma_{pp}$ vs.\ $p_T$ (\texttt{CrossSection\_Ratio\_pd\_2pp\_vs\_pT\_geom.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/CrossSection_Ratio_pd_2pp_vs_pT_geom.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/CrossSection_Ratio_pd_2pp_vs_pT_geom.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Combined Cross Section \& Ratio vs.\ $p_T$ (\texttt{Combined\_XSec\_Ratio\_vs\_pT\_geom.pdf})}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Existing Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/previous_xsec_results/Combined_XSec_Ratio_vs_pT_geom.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{Latest Results}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/Combined_XSec_Ratio_vs_pT_geom.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Systematic Uncertainties}
+
+\begin{frame}{$\text{LH}_2$ Target: Systematic Components (\texttt{Table\_Systematics\_LH2.tex})}
+    \centering
+    \textbf{Latest Results}\\[0.2em]
+    \resizebox{0.95\textwidth}{!}{%
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{$[p_{T,\min}, p_{T,\max})$} & \textbf{Acc.\ Corr.} & \textbf{Acc.\ Err.} & \textbf{Acc.\ Frac.\ Err.} & \textbf{$\psi'$ Corr.} & \textbf{$\psi'$ Err.} & \textbf{$\psi'$ Frac.\ Err.} & \textbf{Yield Corr.} & \textbf{Yield Err.} & \textbf{Yield Frac.\ Err.} \\
+\hline
+[0.00, 0.32) & 0.017346 & 0.000778 & 0.044843 & 0.001829 & 0.000453 & 0.247808 & 1113.2083 & 14.1447 & 0.012706 \\ 
+\hline
+[0.32, 0.49) & 0.016862 & 0.000699 & 0.041470 & 0.002900 & 0.000720 & 0.248166 & 1274.8997 & 16.8204 & 0.013194 \\ 
+\hline
+[0.49, 0.63) & 0.016977 & 0.000698 & 0.041108 & 0.003874 & 0.000957 & 0.247144 & 1004.9141 & 13.9272 & 0.013859 \\ 
+\hline
+[0.63, 0.77) & 0.015061 & 0.000633 & 0.042035 & 0.003034 & 0.001294 & 0.426602 & 1133.6788 & 15.5546 & 0.013720 \\ 
+\hline
+[0.77, 0.95) & 0.013884 & 0.000534 & 0.038469 & 0.003310 & 0.000768 & 0.232102 & 1071.8422 & 15.1637 & 0.014147 \\ 
+\hline
+[0.95, 1.18) & 0.011893 & 0.000457 & 0.038421 & 0.004258 & 0.000933 & 0.219190 & 1039.5957 & 14.7739 & 0.014211 \\ 
+\hline
+[1.18, 1.80) & 0.008053 & 0.000282 & 0.035065 & 0.003692 & 0.000794 & 0.215045 & 873.7092 & 17.7642 & 0.020332 \\ 
+\hline
+\end{tabular}%
+}
+
+    \vspace{0.6em}
+
+    \textbf{Existing Results}\\[0.2em]
+    \resizebox{0.95\textwidth}{!}{%
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{$[p_{T,\min}, p_{T,\max})$} & \textbf{Acc.\ Corr.} & \textbf{Acc.\ Err.} & \textbf{Acc.\ Frac.\ Err.} & \textbf{$\psi'$ Corr.} & \textbf{$\psi'$ Err.} & \textbf{$\psi'$ Frac.\ Err.} & \textbf{Yield Corr.} & \textbf{Yield Err.} & \textbf{Yield Frac.\ Err.} \\
+\hline
+[0.00, 0.32) & 0.019414 & 0.000441 & 0.022716 & 0.001829 & 0.000453 & 0.247808 & 1142.4913 & 13.0388 & 0.011413 \\ 
+\hline
+[0.32, 0.49) & 0.018594 & 0.000392 & 0.021087 & 0.002900 & 0.000720 & 0.248166 & 1321.9807 & 14.9397 & 0.011301 \\ 
+\hline
+[0.49, 0.63) & 0.017444 & 0.000378 & 0.021680 & 0.003874 & 0.000957 & 0.247144 & 1026.4686 & 12.0291 & 0.011719 \\ 
+\hline
+[0.63, 0.77) & 0.016789 & 0.000357 & 0.021237 & 0.003034 & 0.001294 & 0.426602 & 1165.9303 & 12.8487 & 0.011020 \\ 
+\hline
+[0.77, 0.95) & 0.015105 & 0.000297 & 0.019683 & 0.003310 & 0.000768 & 0.232102 & 1037.6971 & 12.3699 & 0.011921 \\ 
+\hline
+[0.95, 1.18) & 0.012398 & 0.000249 & 0.020057 & 0.004258 & 0.000933 & 0.219190 & 1041.7622 & 12.1026 & 0.011617 \\ 
+\hline
+[1.18, 1.80) & 0.008227 & 0.000153 & 0.018561 & 0.003692 & 0.000794 & 0.215045 & 790.6159 & 10.2818 & 0.013005 \\ 
+\hline
+\end{tabular}%
+}
+\end{frame}
+
+\begin{frame}{$\text{LD}_2$ Target: Systematic Components (\texttt{Table\_Systematics\_LD2.tex})}
+    \centering
+    \textbf{Latest Results}\\[0.2em]
+    \resizebox{0.95\textwidth}{!}{%
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{$[p_{T,\min}, p_{T,\max})$} & \textbf{Acc.\ Corr.} & \textbf{Acc.\ Err.} & \textbf{Acc.\ Frac.\ Err.} & \textbf{$\psi'$ Corr.} & \textbf{$\psi'$ Err.} & \textbf{$\psi'$ Frac.\ Err.} & \textbf{Yield Corr.} & \textbf{Yield Err.} & \textbf{Yield Frac.\ Err.} \\
+\hline
+[0.00, 0.32) & 0.017935 & 0.000555 & 0.030941 & 0.001829 & 0.000453 & 0.247808 & 1195.7401 & 9.7708 & 0.008171 \\ 
+\hline
+[0.32, 0.49) & 0.017707 & 0.000501 & 0.028267 & 0.002900 & 0.000720 & 0.248166 & 1394.8632 & 11.9731 & 0.008584 \\ 
+\hline
+[0.49, 0.63) & 0.016331 & 0.000480 & 0.029375 & 0.003874 & 0.000957 & 0.247144 & 1331.0804 & 11.8553 & 0.008907 \\ 
+\hline
+[0.63, 0.77) & 0.015013 & 0.000442 & 0.029424 & 0.003034 & 0.001294 & 0.426602 & 1115.8611 & 9.9159 & 0.008886 \\ 
+\hline
+[0.77, 0.95) & 0.015065 & 0.000388 & 0.025787 & 0.003310 & 0.000768 & 0.232102 & 1242.8262 & 11.2123 & 0.009022 \\ 
+\hline
+[0.95, 1.18) & 0.012283 & 0.000324 & 0.026379 & 0.004258 & 0.000933 & 0.219190 & 1145.3507 & 10.9334 & 0.009546 \\ 
+\hline
+[1.18, 1.80) & 0.008446 & 0.000202 & 0.023906 & 0.003692 & 0.000794 & 0.215045 & 968.7146 & 11.4972 & 0.011869 \\ 
+\hline
+\end{tabular}%
+}
+
+    \vspace{0.6em}
+
+    \textbf{Existing Results}\\[0.2em]
+    \resizebox{0.95\textwidth}{!}{%
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{$[p_{T,\min}, p_{T,\max})$} & \textbf{Acc.\ Corr.} & \textbf{Acc.\ Err.} & \textbf{Acc.\ Frac.\ Err.} & \textbf{$\psi'$ Corr.} & \textbf{$\psi'$ Err.} & \textbf{$\psi'$ Frac.\ Err.} & \textbf{Yield Corr.} & \textbf{Yield Err.} & \textbf{Yield Frac.\ Err.} \\
+\hline
+[0.00, 0.32) & 0.020298 & 0.000441 & 0.021727 & 0.001829 & 0.000453 & 0.247808 & 1261.9947 & 13.5151 & 0.010709 \\ 
+\hline
+[0.32, 0.49) & 0.019066 & 0.000392 & 0.020565 & 0.002900 & 0.000720 & 0.248166 & 1452.3603 & 14.8908 & 0.010253 \\ 
+\hline
+[0.49, 0.63) & 0.017807 & 0.000378 & 0.021237 & 0.003874 & 0.000957 & 0.247144 & 1374.6332 & 13.7162 & 0.009978 \\ 
+\hline
+[0.63, 0.77) & 0.017477 & 0.000357 & 0.020401 & 0.003034 & 0.001294 & 0.426602 & 1164.4947 & 11.7613 & 0.010100 \\ 
+\hline
+[0.77, 0.95) & 0.015424 & 0.000297 & 0.019276 & 0.003310 & 0.000768 & 0.232102 & 1266.1521 & 12.7874 & 0.010099 \\ 
+\hline
+[0.95, 1.18) & 0.013143 & 0.000249 & 0.018919 & 0.004258 & 0.000933 & 0.219190 & 1140.7406 & 11.5325 & 0.010110 \\ 
+\hline
+[1.18, 1.80) & 0.008446 & 0.000153 & 0.018081 & 0.003692 & 0.000794 & 0.215045 & 925.3812 & 9.6742 & 0.010454 \\ 
+\hline
+\end{tabular}%
+}
+\end{frame}
+
+\begin{frame}{Cross-Section Comparison vs.\ $p_T$: $\text{LH}_2$ and $\text{LD}_2$}
+    \begin{columns}[T, onlytextwidth]
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{$\text{LH}_2$ Plot}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/temp/CrossSection_Comparison_LH2_geom_vs_pT.pdf}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \centering
+            \textbf{$\text{LD}_2$ Plot}\\[0.3em]
+            \includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{/root/github/seaquest-dy-1d-abs-xsec/src/xsec_pT/RS62/temp/CrossSection_Comparison_LD2_geom_vs_pT.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}

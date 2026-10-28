@@ -1,0 +1,11 @@
+recoeff,recoeff_error,hodoeff,hodoeff_error
+0.7937963602061335,0.014012045901170422,0.8484041845023939,0.043203894250308676
+0.7993191221822636,0.01535333840007609,0.9620218823689995,0.005226599963512357
+
+average recoeff,0.7965577411941986
+propagated recoeff_error (without correlations),0.010393055738854644
+propagated recoeff_error (with correlations),0.014682692150623256
+average hodoeff,0.9052130334356967
+propagated hodoeff_error,0.02175944522253751
+total_eff = average recoeff (with correlations) * average hodoeff,0.7210544492130871
+total_eff_error = propagated error of total_eff,0.021841946921223408
