@@ -41,13 +41,21 @@ FILES=(
 
 echo "Starting parallel processing of ${#FILES[@]} ROOT files..."
 
-# Loop over files and run the Python script in the background
+# Loop over files, extract roadset label, and run the Python script in the background
 for FILE in "${FILES[@]}"; do
     INPUT_PATH="$INPUT_DIR/$FILE"
     OUTPUT_PATH="$OUTPUT_DIR/truncated_${FILE}"
-    
+
+    # Extract roadset label (e.g., RS57, RS59, RS62, RS67, RS70) from the filename
+    if [[ "$FILE" =~ (RS[0-9]+) ]]; then
+        RS_LABEL="${BASH_REMATCH[1]}"
+    else
+        echo "[Error] Could not extract roadset label (RSxx) from filename: $FILE. Skipping."
+        continue
+    fi
+
     # Run the python script in the background (&)
-    python3 trim_root_files.py --input "$INPUT_PATH" --output "$OUTPUT_PATH" &
+    python3 trim_root_files.py --input "$INPUT_PATH" --output "$OUTPUT_PATH" --rs "$RS_LABEL" &
 done
 
 # Wait for all background jobs to complete

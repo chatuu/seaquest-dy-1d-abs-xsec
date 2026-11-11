@@ -3,25 +3,68 @@ import numpy as np
 import uproot
 import matplotlib.pyplot as plt
 
-def apply_cuts( tree,
-                is_mc=False, 
-                lower_mass_cut=2.0, 
-                upper_mass_cut=10.0, 
-                upper_pT2_cut=7.0
-                ):
-    """Applies standard physics cuts to the given TTree arrays in numpy."""
+
+def check_road_matching(df, rs):
+    """Checks if positive and negative track road IDs match valid L1 trigger road combinations."""
+    if rs in ["RS67", "RS70"]:
+        pos_prefix = "minus"
+        neg_prefix = "plus"
+    else:
+        pos_prefix = "plus"
+        neg_prefix = "minus"
+
+    path = f"/root/github/seaquest-dy-1d-abs-xsec/src/core/L1_triggered_roads/{rs}"
+    if not os.path.exists(path):
+        path = os.path.expanduser(f"~/github/seaquest-dy-1d-abs-xsec/src/core/L1_triggered_roads/{rs}")
+
+    list_road_pos_top = set(np.loadtxt(f"{path}/roads_{pos_prefix}_top.txt", usecols=0, dtype=int, ndmin=1))
+    list_road_pos_bot = set(np.loadtxt(f"{path}/roads_{pos_prefix}_bottom.txt", usecols=0, dtype=int, ndmin=1))
+
+    list_road_neg_top = set(np.loadtxt(f"{path}/roads_{neg_prefix}_top.txt", usecols=0, dtype=int, ndmin=1))
+    list_road_neg_bot = set(np.loadtxt(f"{path}/roads_{neg_prefix}_bottom.txt", usecols=0, dtype=int, ndmin=1))
+
+    pos_trk_roads = df["trk1_road_ids"]
+    neg_trk_roads = df["trk2_road_ids"]
+
+    matching_status = np.zeros(len(pos_trk_roads), dtype=int)
+
+    for i, (event_pos_trk_roads, event_neg_trk_roads) in enumerate(zip(pos_trk_roads, neg_trk_roads)):
+        # Positive track
+        pt = any(road in list_road_pos_top for road in event_pos_trk_roads)
+        pb = any(road in list_road_pos_bot for road in event_pos_trk_roads)
+
+        # Negative track
+        nt = any(road in list_road_neg_top for road in event_neg_trk_roads)
+        nb = any(road in list_road_neg_bot for road in event_neg_trk_roads)
+
+        # Opposite top-bottom combinations
+        tb = pt and nb
+        bt = pb and nt
+
+        matching_status[i] = int(tb or bt)
+
+    return matching_status == 1
+
+
+def apply_cuts(tree,
+               rs,
+               is_mc=False,
+               lower_mass_cut=2.0,
+               upper_mass_cut=10.0,
+               upper_pT2_cut=7.0
+               ):
+    """Applies standard physics cuts and L1 road-matching cuts to the given TTree arrays in numpy."""
     # Read all branches into a dictionary of numpy arrays
     events = tree.arrays(library="np")
-    
+
     class EventNamespace:
         def __init__(self, data):
             self.__dict__.update(data)
-    
+
     e = EventNamespace(events)
 
     if is_mc:
         bo = 1.6
-
     else:
         bo = np.where(e.runID >= 11000, 1.6, 0.4)
 
@@ -70,35 +113,38 @@ def apply_cuts( tree,
         (e.D1 < 400) & (e.D2 < 400) & (e.D3 < 400) & (e.D1 + e.D2 + e.D3 < 1000)
     )
 
-    total_cut_mask = (track1_cut & track2_cut & tracks_cut & dimuon_cut & occ_cut)
+    road_matching_cut = check_road_matching(events, rs)
+
+    total_cut_mask = (track1_cut & track2_cut & tracks_cut & dimuon_cut & occ_cut & road_matching_cut)
     filtered_events = {}
 
     for key, val in events.items():
         filtered_events[key] = val[total_cut_mask]
-    
+
     filtered_events["pT"] = np.sqrt(filtered_events["dpx"]**2 + filtered_events["dpy"]**2)
 
     return filtered_events
 
-def apply_cuts_with_fiducial( tree,
-                is_mc=False, 
-                lower_mass_cut=2.0, 
-                upper_mass_cut=10.0, 
-                upper_pT2_cut=7.0
-                ):
-    """Applies standard physics cuts to the given TTree arrays in numpy."""
+
+def apply_cuts_with_fiducial(tree,
+                             rs=None,
+                             is_mc=False,
+                             lower_mass_cut=2.0,
+                             upper_mass_cut=10.0,
+                             upper_pT2_cut=7.0
+                             ):
+    """Applies standard physics cuts with fiducial cuts to the given TTree arrays in numpy."""
     # Read all branches into a dictionary of numpy arrays
     events = tree.arrays(library="np")
-    
+
     class EventNamespace:
         def __init__(self, data):
             self.__dict__.update(data)
-    
+
     e = EventNamespace(events)
 
     if is_mc:
         bo = 1.6
-
     else:
         bo = np.where(e.runID >= 11000, 1.6, 0.4)
 
@@ -154,12 +200,14 @@ def apply_cuts_with_fiducial( tree,
     )
 
     total_cut_mask = (track1_cut & track2_cut & tracks_cut & dimuon_cut & occ_cut & fiducial_cut)
+    if rs is not None:
+        total_cut_mask = total_cut_mask & check_road_matching(events, rs)
+
     filtered_events = {}
 
     for key, val in events.items():
         filtered_events[key] = val[total_cut_mask]
-    
+
     filtered_events["pT"] = np.sqrt(filtered_events["dpx"]**2 + filtered_events["dpy"]**2)
 
     return filtered_events
-
